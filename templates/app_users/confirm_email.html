@@ -1,0 +1,100 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Подтверждение почты</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+
+    .content {
+      padding: 20px;
+    }
+
+    h1 {
+      color: #007bff;
+    }
+
+    h2 {
+      margin-top: 20px;
+    }
+
+    strong {
+      font-weight: bold;
+    }
+
+    p {
+      line-height: 1.5;
+    }
+
+    .closing {
+      margin-top: 20px;
+    }
+
+    .confirmation-link {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .credentials {
+      margin-top: 20px;
+      text-align: left;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <!-- <img src="{% static 'images/logo.jpg' %}" alt="AITIM TRADING"> -->
+
+    <div class="content">
+      <h1>Приветствуем вас, в наш магазин!</h1>
+      <p>Мы рады приветствовать вас на нашем магазине</p>
+
+      <p class="closing">С нетерпением ждем начала вашего путешествия!</p>
+
+      <div class="confirmation_link">
+        <a href="{{protocol}}://{{domain}}{{confirmation_link}}"
+          style="text-decoration: none; background-color: #007bff; color: #fff; padding: 10px 20px; border-radius: 5px; display: inline-block;">Подтвердить
+          почту</a>
+      </div>
+
+      <div class="credentials">
+        <h2>Ваши данные:</h2>
+        <p><strong>Почта:</strong> {{user_email}}</p>
+        <p><strong>Пароль:</strong> {{user_password}}</p>
+      </div>
+
+      <p class="closing"><strong>С уважением,<br>Команда AITIM TRADING</strong></p>
+    </div>
+  </div>
+
+</body>
+
+</html>
+
+
+
